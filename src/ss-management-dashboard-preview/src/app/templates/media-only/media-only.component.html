@@ -1,0 +1,44 @@
+<ng-template [ngIf]="!data.externalMediaSource">
+  <!-- <div class="asset-container" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
+
+    <div class="asset-media" *ngIf="!hasLayout">
+      <video *ngIf="data.isVideoMedia" [src]="data.externalMediaSource" autoplay muted loop oncanplay="this.play()"
+        onloadedmetadata="this.muted = true" width="100%">
+        Your device browser does not support the video tag.
+      </video>
+      <img *ngIf="!data.isVideoMedia" [src]="data.externalMediaSource" width="100%" />
+    </div>
+
+    <div class="asset-media" *ngIf="hasLayout">
+      <layout-menutickertime 
+      *ngIf="layout.name == 'menutickertime'"
+      [media]="data"
+      [menu]="menu"
+      [layout]="layout">
+      </layout-menutickertime>
+      
+      <layout-menulogomedia 
+      *ngIf="layout.name == 'menulogomedia'"
+      [media]="data"
+      [menu]="menu"
+      [layout]="layout">
+      </layout-menulogomedia>
+      
+      <layout-menuoverlay 
+      *ngIf="layout.name == 'menuoverlay'"
+      [media]="data"
+      [menu]="menu"
+      [layout]="layout">
+      </layout-menuoverlay>
+    </div>
+
+  </div> -->
+</ng-template>
+
+<ng-template [ngIf]="data.externalMediaSource">
+  <div>
+    <iframe [src]="trimYoutubeUrl(data.externalMediaSource) | safe" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+    </iframe>
+  </div>
+</ng-template>

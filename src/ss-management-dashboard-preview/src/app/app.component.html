@@ -4,7 +4,11 @@
 
 
 <div class="content" role="main">
-  PREVIEW HERE
+  <div *ngIf="isMediaOnly">
+    <slide-media 
+      [data]="data" 
+      [showFullscreen]="true"></slide-media>
+  </div>
 </div>
 
 <router-outlet></router-outlet>

@@ -1,4 +1,4 @@
-export class DataResponse {
+export class PreviewDataResponse {
     displayName: string
     externalMediaSource: string
     tenantId: string

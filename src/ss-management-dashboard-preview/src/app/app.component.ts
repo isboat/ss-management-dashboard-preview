@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { DataResponse } from './data.model';
+import { PreviewDataResponse } from './data.model';
 import { environment } from './../environments/environment';
 
 @Component({
@@ -12,7 +12,7 @@ import { environment } from './../environments/environment';
 export class AppComponent {
   title = 'ss-management-dashboard-preview';
   dataUrl = '';
-  data: DataResponse = null;
+  data: PreviewDataResponse = null;
   authToken = '';
 
   constructor(private router: ActivatedRoute, private http: HttpClient) { }
@@ -22,6 +22,11 @@ export class AppComponent {
       this.authToken = params["token"];
       this.getData(params["screenId"]);
     });
+  }
+
+  get isMediaOnly(): boolean
+  {
+    return this.data && this.data.templateKey === "MenuBasic"; // "MediaOnly";
   }
 
   getData(screenId: string): void {
