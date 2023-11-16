@@ -26,7 +26,11 @@ export class AppComponent {
 
   get isMediaOnly(): boolean
   {
-    return this.data && this.data.templateKey === "MenuBasic"; // "MediaOnly";
+    return this.data && this.data.templateKey === "MediaOnly";
+  }
+  get isMenuOnly(): boolean
+  {
+    return this.data && this.data.templateKey === "MenuBasic";
   }
 
   getData(screenId: string): void {

@@ -19,9 +19,26 @@ export class TemplateProperty {
 export class MediaAsset {
     tenantId: string
     id: string
+    assetUrl: string
+    type: number // 1=image, 2=video
 }
 
 export class MenuModel {
     tenantId: string
     id: string
+    description: string
+    title: string
+    currency: string
+    iconUrl: string
+    menuItems: MenuItem[]
+}
+
+export class MenuItem {
+    tenantId: string
+    id: string
+    iconUrl: string
+    name: string
+    price: string
+    title: string
+    description: string
 }

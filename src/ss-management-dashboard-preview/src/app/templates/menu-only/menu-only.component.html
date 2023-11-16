@@ -1,0 +1,39 @@
+<ng-template [ngIf]="data.menu">
+  <div class="menu-only">
+    <div class="row">
+      <div class="col-md-10">
+        <div><h3>{{data.menu.title}}</h3></div>
+        <div>{{data.menu.description}}</div>
+      </div>
+      <!-- <div class="col-md-2">
+        <div><img [src]="data.menu.iconUrl" width="150px" /></div>
+      </div> -->
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table">
+          <thead> 
+            <tr class="table-light">
+              <th scope="col">#</th>
+              <th style="width: 80%" scope="col">Name</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+            <tbody>
+              <tr *ngFor="let item of data.menu.menuItems; index as i;">
+                <th scope="row"><img [src]="item.iconUrl" width="150px" /></th>
+                <td>
+                  <div><h4 class="text-success">{{item.name}}</h4></div>
+                  <div>{{item.description}}</div>
+                </td>
+                <td><div><h4 class="text-success">{{data.menu.currency}}{{item.price}}</h4></div></td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template [ngIf]="!data.menu">
+  <div>No menu</div>
+</ng-template>

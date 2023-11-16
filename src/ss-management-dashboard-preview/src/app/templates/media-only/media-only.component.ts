@@ -4,7 +4,7 @@ import { DOCUMENT } from "@angular/common";
 import { PreviewDataResponse } from 'src/app/data.model';
 
 @Component({
-    selector: 'slide-media',
+    selector: 'media-only',
     templateUrl: './media-only.component.html',
     styleUrls: ['./media-only.component.css'],
     animations: [
@@ -43,6 +43,11 @@ export class MediaOnlyComponent implements OnInit {
 
     ngOnInit() {
 
+    }
+
+    isVideoMedia(mediaType: number): boolean
+    {
+        return mediaType === 2; //1 for image, 2 for video
     }
 
     trimYoutubeUrl(url: string)

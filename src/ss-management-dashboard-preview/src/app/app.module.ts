@@ -6,17 +6,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MediaOnlyComponent } from './templates/media-only/media-only.component';
 import { SafePipe } from './safe.pipe';
+import { MenuOnlyComponent } from './templates/menu-only/menu-only.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
     MediaOnlyComponent,
-    SafePipe
+    SafePipe,
+    MenuOnlyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
