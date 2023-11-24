@@ -5,7 +5,3 @@ iframe {
   height: 100vh;        /* Viewport-relative units */
   width: 100vw;
 }
-.half-screen
-{
-  height: 50vh !important;
-}

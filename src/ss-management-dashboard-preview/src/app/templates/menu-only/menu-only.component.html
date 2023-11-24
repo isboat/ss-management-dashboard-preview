@@ -1,5 +1,5 @@
 <ng-template [ngIf]="data.menu">
-  <div class="menu-only">
+  <div class="menu-only" #menuOnly>
     <div class="row">
       <div class="col-md-10">
         <div><h3>{{data.menu.title}}</h3></div>
@@ -19,6 +19,7 @@
               <th scope="col">Price</th>
             </tr>
           </thead>
+          
             <tbody>
               <tr *ngFor="let item of data.menu.menuItems; index as i;">
                 <th scope="row"><img [src]="item.iconUrl" width="150px" /></th>

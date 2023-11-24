@@ -6,6 +6,8 @@
 <div class="content" role="main">
   <div *ngIf="isMediaOnly"><media-only [data]="data"></media-only></div>
   <div *ngIf="isMenuOnly"><menu-only [data]="data"></menu-only></div>
+  <div *ngIf="isMenuTopMediaBottom"><menu-top-media-bottom [data]="data"></menu-top-media-bottom></div>
+  <div *ngIf="isMediaTopMenuBottom"><media-top-menu-bottom [data]="data"></media-top-menu-bottom></div>
 </div>
 
 <router-outlet></router-outlet>

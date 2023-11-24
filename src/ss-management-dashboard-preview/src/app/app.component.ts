@@ -17,7 +17,7 @@ export class AppComponent {
 
   constructor(private router: ActivatedRoute, private http: HttpClient) { }
 
-  ngOnInit() {
+  ngOnInit() { 
     this.router.queryParams.subscribe(params => {
       this.authToken = params["token"];
       this.getData(params["screenId"]);
@@ -26,11 +26,19 @@ export class AppComponent {
 
   get isMediaOnly(): boolean
   {
-    return this.data && this.data.templateKey === "MediaOnly";
+    return this.data && this.data.layout.templateKey === "MediaOnly";
   }
   get isMenuOnly(): boolean
   {
-    return this.data && this.data.templateKey === "MenuBasic";
+    return this.data && this.data.layout.templateKey === "MenuOnly";
+  }
+  get isMenuTopMediaBottom(): boolean
+  {
+    return this.data && this.data.layout.templateKey === "MenuTopAndMediaBottom";
+  }
+  get isMediaTopMenuBottom(): boolean
+  {
+    return this.data && this.data.layout.templateKey === "MediaTopAndMenuBottom";
   }
 
   getData(screenId: string): void {
@@ -43,9 +51,9 @@ export class AppComponent {
         headers: new HttpHeaders ({ 'Authorization': `Bearer ${this.authToken}` })
       }).subscribe(
         {
-          next: (data) => 
+          next: (responseData) => 
           {
-            this.data = data;
+            this.data = responseData;
           },
           error: (e) => {
             if(e.status == 401) 

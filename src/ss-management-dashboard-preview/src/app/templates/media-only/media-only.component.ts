@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Inject, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, Inject, EventEmitter, Output, ElementRef, ViewChild } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { DOCUMENT } from "@angular/common";
 import { PreviewDataResponse } from 'src/app/data.model';
@@ -26,8 +26,11 @@ import { PreviewDataResponse } from 'src/app/data.model';
 })
 export class MediaOnlyComponent implements OnInit {
 
+    @ViewChild('mediaEle') mediaEle: ElementRef;
+
     @Input() data: PreviewDataResponse;
     @Input() showFullscreen: boolean;
+    @Input() halfScreen: boolean;
 
     @Output() navigateButtonEmitter = new EventEmitter();
 
@@ -43,6 +46,12 @@ export class MediaOnlyComponent implements OnInit {
 
     ngOnInit() {
 
+    }
+    ngAfterViewInit() {
+        if(this.halfScreen)
+        {        
+            this.mediaEle.nativeElement.classList.add('half-screen');
+        }
     }
 
     isVideoMedia(mediaType: number): boolean

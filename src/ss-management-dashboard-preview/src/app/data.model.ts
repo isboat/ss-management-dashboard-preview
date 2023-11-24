@@ -7,8 +7,8 @@ export class PreviewDataResponse {
     mediaAssetEntityId: string
     menu: MenuModel
     menuEntityId: string
-    templateKey: string
-    templateProperties: TemplateProperty[]
+    layout: LayoutModel
+    checksum: string
 }
 export class TemplateProperty {
     key: string
@@ -31,6 +31,14 @@ export class MenuModel {
     currency: string
     iconUrl: string
     menuItems: MenuItem[]
+}
+
+export class LayoutModel
+{
+    id: string;
+    templateKey: string;
+    templateProperties: TemplateProperty[];
+    menuSubType: string;
 }
 
 export class MenuItem {
