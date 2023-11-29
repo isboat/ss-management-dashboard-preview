@@ -10,6 +10,7 @@ import { MenuOnlyComponent } from './templates/menu-only/menu-only.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MenuTopMediaBottomComponent } from './templates/menu-top-media-bottom/menu-top-media-bottom.component';
 import { MediaTopMenuBottomComponent } from './templates/media-top-menu-bottom/media-top-menu-bottom.component';
+import { CurrentDateTimeComponent } from './templates/current-datetime/current-datetime.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MediaTopMenuBottomComponent } from './templates/media-top-menu-bottom/m
     SafePipe,
     MenuOnlyComponent,
     MenuTopMediaBottomComponent,
-    MediaTopMenuBottomComponent
+    MediaTopMenuBottomComponent,
+    CurrentDateTimeComponent
   ],
   imports: [
     BrowserModule,

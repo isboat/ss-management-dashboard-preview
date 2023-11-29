@@ -8,6 +8,7 @@
   <div *ngIf="isMenuOnly"><menu-only [data]="data"></menu-only></div>
   <div *ngIf="isMenuTopMediaBottom"><menu-top-media-bottom [data]="data"></menu-top-media-bottom></div>
   <div *ngIf="isMediaTopMenuBottom"><media-top-menu-bottom [data]="data"></media-top-menu-bottom></div>
+  <div *ngIf="isCurrentDateTime"><current-datetime [data]="data"></current-datetime></div>
 </div>
 
 <router-outlet></router-outlet>

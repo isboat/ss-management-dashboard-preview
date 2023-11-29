@@ -38,7 +38,7 @@ export class LayoutModel
     id: string;
     templateKey: string;
     templateProperties: TemplateProperty[];
-    menuSubType: string;
+    subType: string;
 }
 
 export class MenuItem {

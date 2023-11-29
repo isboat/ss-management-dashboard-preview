@@ -40,6 +40,10 @@ export class AppComponent {
   {
     return this.data && this.data.layout.templateKey === "MediaTopAndMenuBottom";
   }
+  get isCurrentDateTime(): boolean
+  {
+    return this.data && this.data.layout.templateKey === "CurrentDateTime";
+  }
 
   getData(screenId: string): void {
     if(!this.authToken) return;
